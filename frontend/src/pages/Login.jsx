@@ -100,8 +100,8 @@ export default function Login() {
 
         <div className="mt-5 rounded-lg border border-border bg-white px-4 py-3 text-xs text-muted">
           <p className="mb-1 font-medium text-ink">Demo credentials</p>
-          <p>Employee — employee@demo.com / Employee@123</p>
-          <p>Manager — manager@demo.com / Manager@123</p>
+          <p>Employee - employee@demo.com / Employee@123</p>
+          <p>Manager - manager@demo.com / Manager@123</p>
         </div>
       </div>
     </div>

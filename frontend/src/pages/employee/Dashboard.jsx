@@ -48,7 +48,7 @@ export default function EmployeeDashboard() {
           <div className="mt-8 card p-6">
             <h2 className="mb-4 font-display text-lg font-bold text-ink">Recent activity</h2>
             {data.recentActivity.length === 0 ? (
-              <p className="text-sm text-muted">No leave requests yet — apply for your first one above.</p>
+              <p className="text-sm text-muted">No leave requests yet - apply for your first one above.</p>
             ) : (
               <ul className="divide-y divide-border">
                 {data.recentActivity.map((leave) => (

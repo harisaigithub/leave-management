@@ -33,7 +33,7 @@ export function AuthProvider({ children }) {
     try {
       await api.post("/auth/logout");
     } catch {
-      // Stateless JWT — logout succeeds client-side regardless of network state
+      // Stateless JWT - logout succeeds client-side regardless of network state
     }
     localStorage.removeItem("lh_token");
     localStorage.removeItem("lh_user");

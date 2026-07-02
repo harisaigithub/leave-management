@@ -45,7 +45,7 @@ function listPendingLeaves(req, res, next) {
 }
 
 /**
- * Shared logic for approve/reject — validates the leave exists and is PENDING.
+ * Shared logic for approve/reject - validates the leave exists and is PENDING.
  */
 function findPendingLeaveOr409(id) {
   const leave = db.prepare("SELECT * FROM leaves WHERE leave_id = ?").get(id);

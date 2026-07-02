@@ -128,7 +128,7 @@ function updateLeave(req, res, next) {
 /**
  * DELETE /api/leaves/:id
  * "Cancel" a PENDING leave request. Implemented as a soft status change
- * (CANCELLED) rather than a hard delete, to preserve an audit trail —
+ * (CANCELLED) rather than a hard delete, to preserve an audit trail -
  * this matters for a system that will need leave-balance and reporting
  * features later.
  */

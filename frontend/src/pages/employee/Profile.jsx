@@ -40,7 +40,7 @@ export default function Profile() {
             </div>
             <div className="flex justify-between border-b border-border pb-3">
               <dt className="font-medium text-muted">Department</dt>
-              <dd className="text-ink">{profile.department || "—"}</dd>
+              <dd className="text-ink">{profile.department || "-"}</dd>
             </div>
             <div className="flex justify-between">
               <dt className="font-medium text-muted">Member since</dt>

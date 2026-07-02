@@ -5,7 +5,7 @@ const db = require("../src/db");
  * Wipes both tables and inserts two fixed test users. Called from
  * beforeAll/beforeEach in each suite so tests don't leak state into
  * one another. Uses a low bcrypt cost factor purely to keep the test
- * suite fast — never do this in production seeding.
+ * suite fast - never do this in production seeding.
  */
 function resetAndSeed() {
   db.exec("DELETE FROM leaves");

@@ -1,7 +1,7 @@
 {
   "info": {
     "name": "Leave Management System API",
-    "description": "REST API for the Employee Leave Management System MVP. Run 'Login (Employee)' or 'Login (Manager)' first — it auto-saves the token into {{token}} for every other request via a test script.",
+    "description": "REST API for the Employee Leave Management System MVP. Run 'Login (Employee)' or 'Login (Manager)' first - it auto-saves the token into {{token}} for every other request via a test script.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "variable": [

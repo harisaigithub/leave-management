@@ -1,4 +1,4 @@
-# Leave Hub — Employee Leave Management System
+# Leave Hub - Employee Leave Management System
 
 **A full-stack MVP that replaces manual, spreadsheet-driven leave tracking with a role-aware web application for employees and managers.**
 
@@ -31,7 +31,7 @@
 
 ## Introduction
 
-Organizations that manage employee leave through email threads and spreadsheets run into predictable problems: approvals get lost, duplicate requests go unnoticed, and neither employees nor managers have a single source of truth for who is out and when. Leave Hub addresses this by centralizing the entire leave lifecycle — submission, review, approval or rejection with comments, and historical reporting — behind a role-based web interface backed by a REST API.
+Organizations that manage employee leave through email threads and spreadsheets run into predictable problems: approvals get lost, duplicate requests go unnoticed, and neither employees nor managers have a single source of truth for who is out and when. Leave Hub addresses this by centralizing the entire leave lifecycle - submission, review, approval or rejection with comments, and historical reporting - behind a role-based web interface backed by a REST API.
 
 The system is built as a technical assessment MVP, but follows the same architectural discipline expected of a production service: normalized schema, stateless authentication, server-side authorization enforced per-record (not just per-role), and a documented, tested API.
 
@@ -47,7 +47,7 @@ The system is built as a technical assessment MVP, but follows the same architec
 
 ## Summary
 
-Leave Hub is a two-role system. Employees authenticate, land on a dashboard summarizing their leave totals, and can apply for leave through a validated form. Every request starts as `PENDING` and can be edited or cancelled only while it remains in that state — once a manager acts on it, the record becomes an immutable part of the audit trail via a soft status change rather than deletion. Managers see an organization-wide dashboard, a queue of pending requests they can approve or reject (rejection requires a comment), and can search employees to inspect anyone's leave history. The backend is a modular Express API with Zod-based validation and centralized error handling; the frontend is a React single-page application with protected, role-aware routing and a component library shared across both employee and manager views.
+Leave Hub is a two-role system. Employees authenticate, land on a dashboard summarizing their leave totals, and can apply for leave through a validated form. Every request starts as `PENDING` and can be edited or cancelled only while it remains in that state - once a manager acts on it, the record becomes an immutable part of the audit trail via a soft status change rather than deletion. Managers see an organization-wide dashboard, a queue of pending requests they can approve or reject (rejection requires a comment), and can search employees to inspect anyone's leave history. The backend is a modular Express API with Zod-based validation and centralized error handling; the frontend is a React single-page application with protected, role-aware routing and a component library shared across both employee and manager views.
 
 ## Features
 
@@ -205,7 +205,7 @@ The application uses **SQLite** as its relational database.
 - **Indexes** are created on all columns frequently used in `WHERE` clauses or `JOIN` operations to improve query performance.
 - **Frontend** is a single-page application. `AuthContext` owns session state and persists the JWT; `ProtectedRoute` gates access by authentication and role; an Axios instance auto-attaches the token and force-logs-out on 401 responses.
 - **Backend** follows a layered structure: routes define the HTTP surface and Swagger annotations, controllers hold business logic, middlewares handle cross-cutting concerns (auth, error formatting, rate limiting), and a thin database module exposes prepared statements.
-- **Database** is intentionally minimal — two normalized tables with foreign-key and index coverage on every column used in a `WHERE` or `JOIN` clause.
+- **Database** is intentionally minimal - two normalized tables with foreign-key and index coverage on every column used in a `WHERE` or `JOIN` clause.
 
 ## Database Schema
 
@@ -233,15 +233,15 @@ leaves
 `-- updated_at         TEXT NOT NULL
 ```
 
-Indexes exist on `leaves.employee_id`, `leaves.status`, `leaves.leave_type`, and `employees.email` — the four columns every filtered query in the API actually touches. Cancellation is implemented as a status transition (`CANCELLED`), not a row deletion, preserving a complete audit trail for future reporting features.
+Indexes exist on `leaves.employee_id`, `leaves.status`, `leaves.leave_type`, and `employees.email` - the four columns every filtered query in the API actually touches. Cancellation is implemented as a status transition (`CANCELLED`), not a row deletion, preserving a complete audit trail for future reporting features.
 
 ## Implementation Details
 
 - **Validation** is schema-driven on the backend using Zod: every write endpoint (`POST /leaves`, `PUT /leaves/:id`, `PUT /manager/leaves/:id/reject`, etc.) parses and rejects malformed input before it reaches business logic, with per-field error messages surfaced to the client.
 - **Authorization** happens in two layers: `requireRole` middleware blocks role-inappropriate requests before they reach a controller (HTTP 403), while controllers additionally check record ownership (e.g., `leave.employee_id === req.user.employee_id`) since role alone doesn't determine access to a specific row.
 - **State machine enforcement**: leave requests can only be edited, cancelled, approved, or rejected while `status === 'PENDING'`; any other attempt returns HTTP 409 with a descriptive message.
-- **Rejection requires justification**: the reject endpoint returns HTTP 400 if `manager_comments` is empty — a business rule enforced at the API layer, not just the UI, so it can't be bypassed by a direct API call.
-- **Frontend state** is managed with React Context (`AuthContext`) for session data and local component state for page-level data fetching — no external state library was needed at this scope.
+- **Rejection requires justification**: the reject endpoint returns HTTP 400 if `manager_comments` is empty - a business rule enforced at the API layer, not just the UI, so it can't be bypassed by a direct API call.
+- **Frontend state** is managed with React Context (`AuthContext`) for session data and local component state for page-level data fetching - no external state library was needed at this scope.
 
 ## Results
 
@@ -257,7 +257,7 @@ All 21 tests pass consistently, and both the backend test suite and the frontend
 
 ## Installation
 
-Requires **Node.js 22.5 or later** (uses the built-in `node:sqlite` module — no separate database server to install).
+Requires **Node.js 22.5 or later** (uses the built-in `node:sqlite` module - no separate database server to install).
 
 ```bash
 # 1. Clone the repository
@@ -304,14 +304,14 @@ Frontend at `http://localhost:8080`, backend at `http://localhost:5000`, Swagger
    | Manager | `manager@demo.com` | `Manager@123` |
    | Employee | `employee@demo.com` | `Employee@123` |
 
-2. **As an employee:** view your dashboard, apply for leave, and track its status from the Leave History page — edit or cancel while it's pending.
+2. **As an employee:** view your dashboard, apply for leave, and track its status from the Leave History page - edit or cancel while it's pending.
 3. **As a manager:** review the pending-approvals queue, approve or reject each request (rejection requires a comment), and search the employee directory to inspect anyone's leave history.
 4. **API exploration:** import `postman_collection.json` into Postman (the login requests auto-populate a token variable for the rest of the collection), or browse the live Swagger UI at `/api/docs`.
 
 ## API documentation
 
-- **Interactive Swagger UI:** `GET /api/docs` while the backend is running — generated from JSDoc annotations directly on the route files, so it can't drift out of sync with the code.
-- **Postman collection:** `postman_collection.json` at the repo root. Import it, run "Login (Employee)" or "Login (Manager)" first — a test script auto-saves the JWT into a collection variable so every other request is pre-authenticated.
+- **Interactive Swagger UI:** `GET /api/docs` while the backend is running - generated from JSDoc annotations directly on the route files, so it can't drift out of sync with the code.
+- **Postman collection:** `postman_collection.json` at the repo root. Import it, run "Login (Employee)" or "Login (Manager)" first - a test script auto-saves the JWT into a collection variable so every other request is pre-authenticated.
 
 ### Endpoint summary
 
@@ -337,8 +337,8 @@ Frontend at `http://localhost:8080`, backend at `http://localhost:5000`, Swagger
 
 - Stateless JWT (`Authorization: Bearer <token>`), 1-hour expiry by default (`JWT_EXPIRES_IN` in `.env`).
 - `requireAuth` middleware verifies the token and attaches `req.user = { employee_id, email, role }`.
-- `requireRole('MANAGER')` middleware gates manager-only routes — employees get a `403 Forbidden`, not a silent empty result.
-- Ownership checks happen in controllers (e.g. an employee can `PUT /leaves/:id` only if `leave.employee_id === req.user.employee_id`) — role alone isn't sufficient authorization for per-record actions.
+- `requireRole('MANAGER')` middleware gates manager-only routes - employees get a `403 Forbidden`, not a silent empty result.
+- Ownership checks happen in controllers (e.g. an employee can `PUT /leaves/:id` only if `leave.employee_id === req.user.employee_id`) - role alone isn't sufficient authorization for per-record actions.
 - Frontend: `ProtectedRoute` redirects unauthenticated users to `/login`, and redirects mismatched roles to their own dashboard rather than showing a blank/broken page.
 
 ## Validation & error handling
@@ -361,11 +361,11 @@ npm test
 
 ## Design notes (for the write-up / interview)
 
-- **Soft-cancel over hard-delete** for leave records — audit trail matters more than tidiness here.
-- **Reject requires a comment, approve doesn't** — rejecting without explanation is bad UX and bad management practice; the API enforces it, not just the UI.
-- **Ownership checks live in controllers, not just route guards** — role-based middleware answers "can this role hit this endpoint," but "can this specific user touch this specific record" needs the record loaded first.
-- **Design system, not default Tailwind gray** — deep teal accent, status colors (amber/red/teal/grey) chosen for at-a-glance scanability on a dashboard, Manrope/Inter type pairing for a professional-but-not-generic feel.
-- **SQLite for the assessment, schema ready for Postgres** — no infra to stand up to review this, but the normalized schema and parameterized queries carry over directly.
+- **Soft-cancel over hard-delete** for leave records - audit trail matters more than tidiness here.
+- **Reject requires a comment, approve doesn't** - rejecting without explanation is bad UX and bad management practice; the API enforces it, not just the UI.
+- **Ownership checks live in controllers, not just route guards** - role-based middleware answers "can this role hit this endpoint," but "can this specific user touch this specific record" needs the record loaded first.
+- **Design system, not default Tailwind gray** - deep teal accent, status colors (amber/red/teal/grey) chosen for at-a-glance scanability on a dashboard, Manrope/Inter type pairing for a professional-but-not-generic feel.
+- **SQLite for the assessment, schema ready for Postgres** - no infra to stand up to review this, but the normalized schema and parameterized queries carry over directly.
 
 ## Git workflow
 
@@ -400,7 +400,7 @@ git commit -m "Add tests, Docker, CI, Postman collection, and documentation"
 
 ## Acknowledgment of AI-Assisted Development
 
-Portions of this codebase — including boilerplate scaffolding, repetitive CRUD patterns, and documentation drafts — were generated with the assistance of Claude (Anthropic) as a productivity and code-reuse aid, then reviewed, tested, and adapted by the author. All architectural decisions, business logic, and final code were reviewed and are fully understood by the author. This note is included in the interest of transparency and fair use.
+Portions of this codebase - including boilerplate scaffolding, repetitive CRUD patterns, and documentation drafts - were generated with the assistance of Claude (Anthropic) as a productivity and code-reuse aid, then reviewed, tested, and adapted by the author. All architectural decisions, business logic, and final code were reviewed and are fully understood by the author. This note is included in the interest of transparency and fair use.
 
 ## License
 

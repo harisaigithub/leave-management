@@ -59,7 +59,7 @@ export default function Employees() {
                   <tr key={emp.employee_id}>
                     <td className="px-4 py-3 font-medium text-ink">{emp.name}</td>
                     <td className="px-4 py-3 text-muted">{emp.email}</td>
-                    <td className="px-4 py-3 text-muted">{emp.department || "—"}</td>
+                    <td className="px-4 py-3 text-muted">{emp.department || "-"}</td>
                     <td className="px-4 py-3">
                       <button className="font-medium text-brand-600 hover:underline" onClick={() => setViewing(emp)}>
                         View leave history
