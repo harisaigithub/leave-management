@@ -11,6 +11,7 @@ const authRoutes = require("./routes/authRoutes");
 const leavesRoutes = require("./routes/leavesRoutes");
 const employeesRoutes = require("./routes/employeesRoutes");
 const dashboardRoutes = require("./routes/dashboardRoutes");
+const managerRoutes = require("./routes/managerRoutes");
 const { notFoundHandler, errorHandler } = require("./middlewares/errorHandler");
 
 const app = express();
@@ -40,7 +41,8 @@ app.use("/api/auth", authRoutes);
 app.use("/api/leaves", leavesRoutes);
 app.use("/api/employees", employeesRoutes);
 app.use("/api/dashboard", dashboardRoutes);
-// (manager approve/reject/pending routes are added in Step 3)
+app.use("/api/manager", managerRoutes);
+// (all core API routes now implemented)
 
 // --- 404 + error handling (must be last) ---
 app.use(notFoundHandler);
