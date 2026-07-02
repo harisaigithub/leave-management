@@ -22,6 +22,9 @@ jobs:
           cache-dependency-path: backend/package-lock.json
       - run: npm ci
       - run: npm test
+        env:
+          JWT_SECRET: ci-test-secret-do-not-use-in-production
+          JWT_EXPIRES_IN: 1h
 
   frontend:
     name: Frontend build
