@@ -135,12 +135,11 @@ leave-management/
 ├── postman_collection.json
 └── .github/workflows/ci.yml
 ```
-
-
-## System Architecture
+# System Architecture
 
 The application uses a standard three-tier architecture, separating the presentation, business logic, and data layers.
 
+```text
 ┌──────────────────────────┐
 │      Frontend Layer      │
 │──────────────────────────│
@@ -170,7 +169,32 @@ The application uses a standard three-tier architecture, separating the presenta
 │ • 2 Relational Tables    │
 │ • Persistent Storage     │
 └──────────────────────────┘
+```
 
+## Frontend
+
+The frontend is implemented as a **React Single-Page Application (SPA)** using **Vite** and **Tailwind CSS**.
+
+- `AuthContext` manages the authentication session and persists the JWT.
+- `ProtectedRoute` restricts access to authenticated users and enforces role-based authorization.
+- A shared Axios instance automatically attaches the JWT to every request and logs users out when a **401 Unauthorized** response is received.
+
+## Backend
+
+The backend follows a layered architecture built with **Express** and **Node.js**.
+
+- **Routes** define the REST API endpoints and contain Swagger documentation.
+- **Controllers** implement the application's business logic.
+- **Middlewares** provide cross-cutting functionality such as authentication, error handling, and rate limiting.
+- A lightweight **database module** encapsulates all SQL operations using prepared statements.
+
+## Database
+
+The application uses **SQLite** as its relational database.
+
+- The schema consists of **two normalized tables**.
+- **Foreign key constraints** maintain referential integrity.
+- **Indexes** are created on all columns frequently used in `WHERE` clauses or `JOIN` operations to improve query performance.
 - **Frontend** is a single-page application. `AuthContext` owns session state and persists the JWT; `ProtectedRoute` gates access by authentication and role; an Axios instance auto-attaches the token and force-logs-out on 401 responses.
 - **Backend** follows a layered structure: routes define the HTTP surface and Swagger annotations, controllers hold business logic, middlewares handle cross-cutting concerns (auth, error formatting, rate limiting), and a thin database module exposes prepared statements.
 - **Database** is intentionally minimal — two normalized tables with foreign-key and index coverage on every column used in a `WHERE` or `JOIN` clause.
