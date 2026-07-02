@@ -435,7 +435,7 @@ SOFTWARE.
 For questions about this project, reach out via the details below.
 
 
-## ***To acquire this project, please contact***
+## ***For questions regarding this project or technical implementation details:***
 
 **GitHub:** https://github.com/harisaigithub
 **Email:** [harisaiparasa@gmail.com](mailto:harisaiparasa@gmail.com)
