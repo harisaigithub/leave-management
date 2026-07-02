@@ -8,6 +8,9 @@ require("dotenv").config();
 
 const swaggerSpec = require("./config/swagger");
 const authRoutes = require("./routes/authRoutes");
+const leavesRoutes = require("./routes/leavesRoutes");
+const employeesRoutes = require("./routes/employeesRoutes");
+const dashboardRoutes = require("./routes/dashboardRoutes");
 const { notFoundHandler, errorHandler } = require("./middlewares/errorHandler");
 
 const app = express();
@@ -34,7 +37,10 @@ app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // --- Routes ---
 app.use("/api/auth", authRoutes);
-// (employees / leaves routes are added in Step 2)
+app.use("/api/leaves", leavesRoutes);
+app.use("/api/employees", employeesRoutes);
+app.use("/api/dashboard", dashboardRoutes);
+// (manager approve/reject/pending routes are added in Step 3)
 
 // --- 404 + error handling (must be last) ---
 app.use(notFoundHandler);
