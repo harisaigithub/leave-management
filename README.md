@@ -103,7 +103,7 @@ Leave Hub is a two-role system. Employees authenticate, land on a dashboard summ
 
 ### Login Page
 
-Secure JWT-based authentication with role-based access control for employees and managers.
+ # Secure JWT-based authentication with role-based access control for employees and managers.
 
 ![Login Page](docs/screenshots/login.png)
 
@@ -111,7 +111,7 @@ Secure JWT-based authentication with role-based access control for employees and
 
 ### Employee Dashboard
 
-Overview of total, approved, pending, and rejected leave requests along with recent activities.
+# Overview of total, approved, pending, and rejected leave requests along with recent activities.
 
 ![Employee Dashboard](docs/screenshots/employee-dashboard.png)
 
@@ -119,7 +119,7 @@ Overview of total, approved, pending, and rejected leave requests along with rec
 
 ### Apply Leave
 
-Validated leave application form with business-rule enforcement and user-friendly error handling.
+# Validated leave application form with business-rule enforcement and user-friendly error handling.
 
 ![Apply Leave](docs/screenshots/apply-leave.png)
 
@@ -131,7 +131,7 @@ Validated leave application form with business-rule enforcement and user-friendl
 
 ### Leave History
 
-Search, filter, edit, cancel, and track leave requests with complete status visibility.
+# Search, filter, edit, cancel, and track leave requests with complete status visibility.
 
 ![Leave History](docs/screenshots/leave-history.png)
 
@@ -141,7 +141,7 @@ Search, filter, edit, cancel, and track leave requests with complete status visi
 
 ### Leave Details
 
-Detailed view of individual leave requests, including manager comments and status transitions.
+# Detailed view of individual leave requests, including manager comments and status transitions.
 
 ![Leave Details](docs/screenshots/leave-details.png)
 
@@ -153,7 +153,7 @@ Detailed view of individual leave requests, including manager comments and statu
 
 ### Manager Dashboard
 
-Organization-wide statistics, approval metrics, and recent leave activities.
+# Organization-wide statistics, approval metrics, and recent leave activities.
 
 ![Manager Dashboard](docs/screenshots/manager-dashboard.png)
 
@@ -163,7 +163,7 @@ Organization-wide statistics, approval metrics, and recent leave activities.
 
 ### Pending Approvals
 
-Review, approve, or reject employee leave requests with mandatory comments for rejections.
+# Review, approve, or reject employee leave requests with mandatory comments for rejections.
 
 ![Pending Approvals](docs/screenshots/pending-approvals.png)
 
@@ -171,7 +171,7 @@ Review, approve, or reject employee leave requests with mandatory comments for r
 
 ### Employee Directory & History
 
-Search employees and inspect complete leave histories for management and reporting purposes.
+# Search employees and inspect complete leave histories for management and reporting purposes.
 
 ![Employee History](docs/screenshots/employee-history.png)
 
@@ -181,7 +181,7 @@ Search employees and inspect complete leave histories for management and reporti
 
 ### Swagger API Documentation
 
-Interactive OpenAPI documentation covering authentication, employee, and manager endpoints.
+# Interactive OpenAPI documentation covering authentication, employee, and manager endpoints.
 
 ![Swagger Documentation](docs/screenshots/swagger.png)
 
@@ -193,7 +193,7 @@ Interactive OpenAPI documentation covering authentication, employee, and manager
 
 ### GitHub Actions CI Pipeline
 
-Automated testing and build validation executed on every push and pull request.
+# Automated testing and build validation executed on every push and pull request.
 
 ![GitHub Actions](docs/screenshots/github-actions.png)
 
