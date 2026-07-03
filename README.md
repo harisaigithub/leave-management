@@ -103,81 +103,101 @@ Leave Hub is a two-role system. Employees authenticate, land on a dashboard summ
 
 ### Login Page
 
-![Login Page](docs/screenshots/login.png)
-
 Secure JWT-based authentication with role-based access control for employees and managers.
+
+![Login Page](docs/screenshots/login.png)
 
 ---
 
 ### Employee Dashboard
 
-![Employee Dashboard](docs/screenshots/employee-dashboard.png)
-
 Overview of total, approved, pending, and rejected leave requests along with recent activities.
+
+![Employee Dashboard](docs/screenshots/employee-dashboard.png)
 
 ---
 
 ### Apply Leave
 
+Validated leave application form with business-rule enforcement and user-friendly error handling.
+
 ![Apply Leave](docs/screenshots/apply-leave.png)
 
-Validated leave application form with business-rule enforcement and user-friendly error handling.
+<img width="1920" height="1080" alt="apply-leave (2)" src="https://github.com/user-attachments/assets/0cb516b5-d45f-49d9-95cd-3f3ad26466cd" />
+
+<img width="1920" height="1080" alt="apply-leave (4)" src="https://github.com/user-attachments/assets/8971f8f7-0727-436e-87ce-ef9a95258611" />
 
 ---
 
 ### Leave History
 
+Search, filter, edit, cancel, and track leave requests with complete status visibility.
+
 ![Leave History](docs/screenshots/leave-history.png)
 
-Search, filter, edit, cancel, and track leave requests with complete status visibility.
+<img width="1920" height="1080" alt="employee-profile" src="https://github.com/user-attachments/assets/43854238-7632-433c-aed3-e81fd127da91" />
 
 ---
 
 ### Leave Details
 
+Detailed view of individual leave requests, including manager comments and status transitions.
+
 ![Leave Details](docs/screenshots/leave-details.png)
 
-Detailed view of individual leave requests, including manager comments and status transitions.
+<img width="1920" height="1080" alt="leave-details (2)" src="https://github.com/user-attachments/assets/78dfa833-8ac1-4b31-a85a-626b4cc56d76" />
+
+<img width="1920" height="1080" alt="employee-profile" src="https://github.com/user-attachments/assets/78a59df3-168d-4da0-9708-a8fb8a71bba0" />
 
 ---
 
 ### Manager Dashboard
 
+Organization-wide statistics, approval metrics, and recent leave activities.
+
 ![Manager Dashboard](docs/screenshots/manager-dashboard.png)
 
-Organization-wide statistics, approval metrics, and recent leave activities.
+<img width="1920" height="1080" alt="manager-profile" src="https://github.com/user-attachments/assets/f26f0bca-6295-47cf-af64-4470777ee73b" />
 
 ---
 
 ### Pending Approvals
 
-![Pending Approvals](docs/screenshots/pending-approvals.png)
-
 Review, approve, or reject employee leave requests with mandatory comments for rejections.
+
+![Pending Approvals](docs/screenshots/pending-approvals.png)
 
 ---
 
 ### Employee Directory & History
 
+Search employees and inspect complete leave histories for management and reporting purposes.
+
 ![Employee History](docs/screenshots/employee-history.png)
 
-Search employees and inspect complete leave histories for management and reporting purposes.
+<img width="1920" height="1080" alt="employee-history (2)" src="https://github.com/user-attachments/assets/b9c8f295-ad00-4577-b034-89b5841a4f78" />
 
 ---
 
 ### Swagger API Documentation
 
+Interactive OpenAPI documentation covering authentication, employee, and manager endpoints.
+
 ![Swagger Documentation](docs/screenshots/swagger.png)
 
-Interactive OpenAPI documentation covering authentication, employee, and manager endpoints.
+<img width="1920" height="1080" alt="swagger (3)" src="https://github.com/user-attachments/assets/50c68fd1-5113-423b-b45d-20808d0f2f8e" />
+
+<img width="1920" height="1080" alt="swagger (2)" src="https://github.com/user-attachments/assets/d2144695-ff0e-4e38-af8f-9a897d29e0c6" />
 
 ---
 
 ### GitHub Actions CI Pipeline
 
+Automated testing and build validation executed on every push and pull request.
+
 ![GitHub Actions](docs/screenshots/github-actions.png)
 
-Automated testing and build validation executed on every push and pull request.
+<img width="1920" height="1080" alt="github-actions (2)" src="https://github.com/user-attachments/assets/8f179af0-3ae9-4afc-91ee-6991adfabe11" />
 
 
 ## **API Documentation**
