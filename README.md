@@ -9,6 +9,7 @@
 - [Summary](#summary)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
+- [Screenshots](#Screenshots)
 - [Project Structure](#project-structure)
 - [System Architecture](#system-architecture)
 - [Database Schema](#database-schema)
@@ -178,7 +179,6 @@ Interactive OpenAPI documentation covering authentication, employee, and manager
 
 Automated testing and build validation executed on every push and pull request.
 
----
 
 ## **API Documentation**
 - Swagger / OpenAPI 3.0 (served live at `/api/docs`)
