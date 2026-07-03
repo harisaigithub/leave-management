@@ -98,6 +98,86 @@ Leave Hub is a two-role system. Employees authenticate, land on a dashboard summ
 **Database**
 - SQLite via Node's native `node:sqlite` module (zero external dependencies; schema is portable to PostgreSQL/MySQL)
 
+## Screenshots
+
+### Login Page
+
+![Login Page](docs/screenshots/login.png)
+
+Secure JWT-based authentication with role-based access control for employees and managers.
+
+---
+
+### Employee Dashboard
+
+![Employee Dashboard](docs/screenshots/employee-dashboard.png)
+
+Overview of total, approved, pending, and rejected leave requests along with recent activities.
+
+---
+
+### Apply Leave
+
+![Apply Leave](docs/screenshots/apply-leave.png)
+
+Validated leave application form with business-rule enforcement and user-friendly error handling.
+
+---
+
+### Leave History
+
+![Leave History](docs/screenshots/leave-history.png)
+
+Search, filter, edit, cancel, and track leave requests with complete status visibility.
+
+---
+
+### Leave Details
+
+![Leave Details](docs/screenshots/leave-details.png)
+
+Detailed view of individual leave requests, including manager comments and status transitions.
+
+---
+
+### Manager Dashboard
+
+![Manager Dashboard](docs/screenshots/manager-dashboard.png)
+
+Organization-wide statistics, approval metrics, and recent leave activities.
+
+---
+
+### Pending Approvals
+
+![Pending Approvals](docs/screenshots/pending-approvals.png)
+
+Review, approve, or reject employee leave requests with mandatory comments for rejections.
+
+---
+
+### Employee Directory & History
+
+![Employee History](docs/screenshots/employee-history.png)
+
+Search employees and inspect complete leave histories for management and reporting purposes.
+
+---
+
+### Swagger API Documentation
+
+![Swagger Documentation](docs/screenshots/swagger.png)
+
+Interactive OpenAPI documentation covering authentication, employee, and manager endpoints.
+
+---
+
+### GitHub Actions CI Pipeline
+
+![GitHub Actions](docs/screenshots/github-actions.png)
+
+Automated testing and build validation executed on every push and pull request.
+
 **API Documentation**
 - Swagger / OpenAPI 3.0 (served live at `/api/docs`)
 - Postman Collection (`postman_collection.json`)
