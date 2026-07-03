@@ -388,7 +388,9 @@ Frontend at `http://localhost:8080`, backend at `http://localhost:5000`, Swagger
 3. **As a manager:** review the pending-approvals queue, approve or reject each request (rejection requires a comment), and search the employee directory to inspect anyone's leave history.
 4. **API exploration:** import `postman_collection.json` into Postman (the login requests auto-populate a token variable for the rest of the collection), or browse the live Swagger UI at `/api/docs`.
 
+
 ## API documentation
+
 
 - **Interactive Swagger UI:** `GET /api/docs` while the backend is running - generated from JSDoc annotations directly on the route files, so it can't drift out of sync with the code.
 - **Postman collection:** `postman_collection.json` at the repo root. Import it, run "Login (Employee)" or "Login (Manager)" first - a test script auto-saves the JWT into a collection variable so every other request is pre-authenticated.
