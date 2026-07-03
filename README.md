@@ -178,7 +178,9 @@ Interactive OpenAPI documentation covering authentication, employee, and manager
 
 Automated testing and build validation executed on every push and pull request.
 
-**API Documentation**
+---
+
+## **API Documentation**
 - Swagger / OpenAPI 3.0 (served live at `/api/docs`)
 - Postman Collection (`postman_collection.json`)
 
